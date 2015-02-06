@@ -87,4 +87,14 @@ add_action('tt_dashboard_setup', 'tt_custom_dashboard_widgets');
 	//Plugins - Popular, New and Recently updated Wordpress Plugins
 	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
 }
+/////////////////////
+
+/////////////////////////////////////////////////////// Replace WordPress login logo with your own
+add_action('login_head', 'tt_custom_login_logo');
+function tt_custom_login_logo() {
+    echo '<style type="text/css">
+    h1 a { background-image:url('http://www.2020creative.com/wp-content/themes/folioway/images/logo.png'); !important; background-size: 311px 100px !important;height: 100px !important; width: 311px !important; margin-bottom: 10px !important; padding-bottom: 0 !important; }
+    .login form { margin-top: 10px !important; }
+    </style>';
+}
 
